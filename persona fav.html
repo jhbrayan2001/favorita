@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💌 Carta especial by myeya 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to top, #ffd6e0, #fff0f5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.6em;
+    color: #ff4f81;
+    text-shadow: 0 0 8px #fff;
+    margin-bottom: 15px;
+    animation: bounce 1.5s infinite alternate;
+  }
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+  }
+  .envelope {
+    width: 480px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 10;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+    margin-top: 10px;
+  }
+  .envelope:hover {
+    transform: scale(1.08);
+  }
+  /* ⬇️ Texto de instrucción y flecha */
+  #arrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .arrow-text {
+    color: #ff4f81;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin-top: 15px;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+  }
+  .arrow {
+    font-size: 2.5em;
+    color: #ff4f81;
+    animation: arrowMove 1.2s infinite alternate;
+    margin-top: 5px;
+  }
+  @keyframes arrowMove {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  /* 📄 Carta */
+  .letter {
+    display: none;
+    background-color: #fff;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    width: 520px;
+    max-width: 90%;
+    padding: 40px;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.25);
+    text-align: left;
+    animation: slideUp 1s ease;
+    position: relative;
+    z-index: 2;
+    font-family: 'Dancing Script', cursive;
+    line-height: 1.6;
+    font-size: 1.3em;
+    margin: auto;
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .heart {
+    position: absolute;
+    bottom: -20px;
+    font-size: 24px;
+    animation: floatUp 7s linear infinite;
+    opacity: 0.9;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
+  }
+  .signature {
+    text-align: right;
+    margin-top: 30px;
+    font-style: italic;
+  }
+  .date {
+    text-align: right;
+    color: #999;
+    font-size: 0.85em;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+<h2 id="instruction"> ¿POR QUÉ PERSONA FAVORITA?</h2>
+<div id="arrow-container">
+  <div class="arrow-text">Presiona aqui Melisaa.</div>
+  <div class="arrow">⬇</div>
+</div>
+<img src="https://goo.su/KLXC" 
+     alt="Sobre de carta" 
+     class="envelope" 
+     id="envelope"
+     onclick="openEnvelope()">
+<div class="letter" id="letter">
+  <div class="date">Juliaca, 23 de octubre de 2025</div>
+  <p>
+    Querida Melii,  
+    <br><br>
+    Aunque no nos veamos mucho, y esta sea la segunda vez que nos vemos, siempre te tengo presente.
+A veces, un mensaje tuyo se vuelve mi favorito y me calma saber que estás ahí.
+Me gusta que, aunque estemos lejos, seguimos hablando por mucho tiempo desde 2022;
+es como si no pasaran los años.  
+    <br><br>
+   Hay cosas que no te digo siempre, pero de verdad te aprecio un montón.
+Eres alguien con quien puedo ser distinto a los demás, sin fingir.
+Gracias por las veces en que me escuchaste, por entenderme y por seguir ahí,
+aunque casi todo sea por mensajes o a veces por llamadas. 
+    <br><br>
+  Tal vez no sea el momento aún, pero te tengo mucho cariño.
+Eres muy importante para mí y me alegra mucho haberte conocido. 
+    <br><br>
+   Gracias por quedarte, por tus palabras, por tus mensajes
+y por los momentos que compartimos, aunque sea a la distancia.
+    <br><br>
+    Gracias por ser tú, por existir, por quedarte.  
+  </p>
+  <div class="signature">
+   Por eso y más, eres mi persona favorita.💖
+    <br>
+    <strong>Jhon Brayan 💌</strong>
+  </div>
+</div>
+<script>
+function openEnvelope() {
+  const envelope = document.getElementById('envelope');
+  const letter = document.getElementById('letter');
+  const arrowContainer = document.getElementById('arrow-container');
+  const text = document.getElementById('instruction');
+  envelope.style.transform = "scale(0.😎";
+  envelope.style.opacity = "0";
+  text.style.display = "none";
+  arrowContainer.style.display = "none";
+  setTimeout(() => {
+    envelope.style.display = "none";
+    letter.style.display = "block";
+    startInfiniteHearts();
+  }, 600);
+}
+function startInfiniteHearts() {
+  setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.textContent = "💗";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 26) + "px";
+    heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+  }, 200);
+}
+</script>
+</body>
+</html>
